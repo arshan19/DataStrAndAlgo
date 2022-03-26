@@ -40,6 +40,20 @@ class Node {
         return searchTree(node);
       }
     }
+    findMin() {
+      let current = this.root;
+      while (current.left !== null) {
+        current = current.left;
+      }
+      return current.data;
+    }
+    findMax() {
+      let current = this.root;
+      while (current.right !== null) {
+        current = current.right;
+      }
+      return current.data;
+    }
     search(data) {
       let current = this.root;
       while (current.data !== data) {
@@ -120,6 +134,8 @@ class Node {
   bst.insert(22);
   bst.insert(5);
   bst.insert(7);
+  console.log(bst.findMin());
+  console.log(bst.findMax());
   console.log(bst.search(7));
   bst.insert(20);
   
